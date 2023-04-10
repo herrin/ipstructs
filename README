@@ -1,0 +1,14 @@
+C struct overlay for IPv4 and IPv6 packet headers.
+
+Conveniently access fields within the headers instead of using a bunch of
+macros.
+
+
+#include "addresses.h"
+
+struct *ipv4_header *h;
+
+h = (struct ipv4_header *) ipv4_packet;
+if (h->dont_fragment) printf("Don't fragment bit set!\n");
+
+
